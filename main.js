@@ -12,47 +12,50 @@ let cardsMembers = [
     nome: "lorem ipsum1",
     email: "test@test.it",
     descrizione: "lorem ipsum dolor",
-    immagine: "./img/female1.png",
+    immagine: "./img/female2.png",
 },
 {
     nome: "lorem ipsum1",
     email: "test@test.it",
     descrizione: "lorem ipsum dolor",
-    immagine: "./img/female1.png",
+    immagine: "./img/female3.png",
 },
 {
     nome: "lorem ipsum1",
     email: "test@test.it",
     descrizione: "lorem ipsum dolor",
-    immagine: "./img/female1.png",
+    immagine: "./img/male1.png",
 },
 {
     nome: "lorem ipsum1",
     email: "test@test.it",
     descrizione: "lorem ipsum dolor",
-    immagine: "./img/female1.png",
+    immagine: "./img/male2.png",
 },
 {
     nome: "lorem ipsum1",
     email: "test@test.it",
     descrizione: "lorem ipsum dolor",
-    immagine: "./img/female1.png",
+    immagine: "./img/male3.png",
 }
 ];
 
-let cardsConteiner = document.getElementById("flex")
+let cardsConteiner = document.getElementsByClassName('container')[0];
+console.log(cardsConteiner);
 
-for (let index = 0; index < cardsMembers.length; index++){
+for (let i = 0; i < cardsMembers.length; i++){
+    let element = cardsMembers[i];
 
+    cardsConteiner.innerHTML +=` 
     <div class="flex">
         <figure>
-            <img height="96px" src="./img/female1.png" alt="">
+            <img height="96px" src='${element.immagine}' alt="">
         </figure>
         <div class="flex flex-column">
-            <h5>lorem ipsum1</h5>
-            <span>test@test.it</span>
-            <span>lorem ipsum dolor</span>
+            <h5>'${element.nome}'</h5>
+            <span>'${element.email}'</span>
+            <span>'${element.descrizione}'</span>
         </div>
     </div>
-    
+    `; 
 };
